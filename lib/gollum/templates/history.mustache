@@ -2,9 +2,6 @@
 <div id="head">
   <h1>History for <strong>{{title}}</strong></h1>
   <ul class="actions">
-    <li class="minibutton">
-      {{>searchbar}}
-    </li>
     <li class="minibutton"><a href="{{base_url}}/{{escaped_url_path}}"
        class="action-view-page">View Page</a></li>
     {{#allow_editing}}
@@ -15,10 +12,12 @@
 </div>
 <div id="wiki-history">
 
-  <ul class="actions">
-    <li class="minibutton"><a href="javascript:void(0);"
-       class="action-compare-revision">Compare Revisions</a></li>
-  </ul>
+  {{#allow_editing}}
+    <ul class="actions">
+      <li class="minibutton"><a href="javascript:void(0);"
+                                class="action-compare-revision">Compare Revisions</a></li>
+    </ul>
+  {{/allow_editing}}
 
   <form name="compare-versions" id="version-form" method="post"
    action="{{base_url}}/compare/{{escaped_url_path}}">
@@ -49,12 +48,10 @@
 </div>
 <div id="footer">
   <ul class="actions">
-    <li class="minibutton"><a href="javascript:void(0);"
-       class="action-compare-revision">Compare Revisions</a></li>
-
-    <!-- only show this button if we have more than 20 revisions -->
-    <li class="minibutton"><a href="#"
-       class="action-back-to-top">Back to Top</a></li>
+    {{#allow_editing}}
+      <li class="minibutton"><a href="javascript:void(0);"
+                                class="action-compare-revision">Compare Revisions</a></li>
+    {{/allow_editing}}
   </ul>
 </div>
 </div>

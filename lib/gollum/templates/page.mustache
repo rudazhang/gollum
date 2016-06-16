@@ -11,9 +11,9 @@ Mousetrap.bind(['e'], function( e ) {
     <li class="minibutton"><a href="{{base_url}}/"
        class="action-home-page">Home</a></li>
     <li class="minibutton"><a href="{{base_url}}/pages"
-      class="action-all-pages">All</a></li>
+      class="action-all-pages">Folders</a></li>
     <li class="minibutton"><a href="{{base_url}}/fileview"
-    class="action-fileview">Files</a></li>
+    class="action-fileview">Fileview</a></li>
     {{#allow_editing}}
       <li class="minibutton jaws">
         <a href="#" id="minibutton-new-page">New</a></li>
@@ -40,7 +40,7 @@ Mousetrap.bind(['e'], function( e ) {
     <li class="minibutton"><a href="{{base_url}}/history/{{escaped_url_path}}"
        class="action-page-history">History</a></li>
     <li class="minibutton"><a href="{{base_url}}/latest_changes"
-       class="action-page-history">Latest Changes</a></li>
+       class="action-page-history">Commits</a></li>
     {{/page_exists}}
   </ul>
   {{>searchbar}}
@@ -90,11 +90,12 @@ Mousetrap.bind(['e'], function( e ) {
     </p>
   {{/allow_editing}}
   <ul class="footer-info">
+    <li>Ruda.city</li>
     <li id="footer-info-license">Content is available under <a class="external" rel="nofollow"
                                                                href="//creativecommons.org/licenses/by-sa/3.0/">CC
       BY-SA 3.0</a> unless otherwise noted.
     </li>
-    <li>If you find your copyrighted content here, please <a href="/about">contact me</a>.</li>
+    <li>If you find copyrighted content here, please <a href="/about">contact me</a>.</li>
   </ul>
 </div>
 </div>
