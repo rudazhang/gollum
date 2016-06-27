@@ -7,44 +7,27 @@ Mousetrap.bind(['e'], function( e ) {
 </script>
 <div id="wiki-wrapper" class="page">
 <div id="head">
-  <ul class="actions">
-    <li class="minibutton"><a href="{{base_url}}/"
-       class="action-home-page">Home</a></li>
-    <li class="minibutton"><a href="{{base_url}}/pages"
-      class="action-all-pages">Folders</a></li>
-    <li class="minibutton"><a href="{{base_url}}/fileview"
-    class="action-fileview">Fileview</a></li>
-    {{#allow_editing}}
-      <li class="minibutton jaws">
-        <a href="#" id="minibutton-new-page">New</a></li>
-    {{/allow_editing}}
-    {{#allow_editing}}
-      {{#allow_uploads}}
-      <li class="minibutton jaws">
-        <a href="#" id="minibutton-upload-page">Upload</a></li>
-      {{/allow_uploads}}
-    {{/allow_editing}}
-    {{#allow_editing}}
-      {{#editable}}
-        <li class="minibutton jaws">
-          <a href="#" id="minibutton-rename-page">Rename</a></li>
-      {{/editable}}
-    {{/allow_editing}}
-    {{#allow_editing}}
-      {{#editable}}
-        <li class="minibutton"><a href="{{base_url}}/edit/{{escaped_url_path}}"
-           class="action-edit-page">Edit</a></li>
-      {{/editable}}
-    {{/allow_editing}}
-    {{#page_exists}}
-    <li class="minibutton"><a href="{{base_url}}/history/{{escaped_url_path}}"
-       class="action-page-history">History</a></li>
-    <li class="minibutton"><a href="{{base_url}}/latest_changes"
-       class="action-page-history">Commits</a></li>
-    {{/page_exists}}
-  </ul>
-  {{>searchbar}}
-  <h1>{{page_header}}</h1>
+    <ul class="actions">
+        <li class="minibutton"><a href="{{base_url}}/" class="action-home-page">Home</a></li>
+        {{#page_exists}}
+            <li class="minibutton"><a href="{{base_url}}/history/{{escaped_url_path}}" class="action-page-history">History</a></li>
+        {{/page_exists}}
+        {{#allow_editing}}
+            <li class="minibutton jaws"><a href="#" id="minibutton-new-page">New</a></li>
+            {{#allow_uploads}}
+                <li class="minibutton jaws"><a href="#" id="minibutton-upload-page">Upload</a></li>
+            {{/allow_uploads}}
+            {{#editable}}
+                <li class="minibutton jaws"><a href="#" id="minibutton-rename-page">Rename</a></li>
+                <li class="minibutton"><a href="{{base_url}}/edit/{{escaped_url_path}}" class="action-edit-page">Edit</a></li>
+            {{/editable}}
+        {{/allow_editing}}
+        <li class="minibutton"><a href="{{base_url}}/pages" class="action-all-pages">Pages</a></li>
+        <li class="minibutton"><a href="{{base_url}}/fileview" class="action-fileview">Fileview</a></li>
+        <li class="minibutton"><a href="{{base_url}}/latest_changes" class="action-page-history">Commits</a></li>
+    </ul>
+    {{>searchbar}}
+    <h1>{{page_header}}</h1>
 </div>
 <div id="wiki-content">
 <div class="{{#has_header}}has-header{{/has_header}}{{#has_footer}} has-footer{{/has_footer}}{{#has_sidebar}} has-sidebar has-{{bar_side}}bar{{/has_sidebar}}{{#has_toc}} has-toc{{/has_toc}}">
@@ -95,7 +78,7 @@ Mousetrap.bind(['e'], function( e ) {
                                                                href="//creativecommons.org/licenses/by-sa/3.0/">CC
       BY-SA 3.0</a> unless otherwise noted.
     </li>
-    <li>If you find copyrighted content here, please <a href="/about">contact me</a>.</li>
+    <li>If you find copyrighted content here, please <a href="https://ruda.city/about">contact me</a>.</li>
   </ul>
 </div>
 </div>

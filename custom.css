@@ -7,19 +7,30 @@ a:not([href*='//']) {
     color:violet;
 }
 
-
 a.internal.present {
 }
 
 /* Larger Title */
+#wiki-wrapper.page #head {
+    font-size: 15px;
+}
+
 #head h1 {
-    /* font-size: 2em; */
+    font-size: 1.7em;
     padding: 20px 0;
     margin: 0 16px;
 }
 
+.markdown-body h3 {
+    font-size: 1.2em;
+}
+
 #head ul.actions {
-  margin: 0 16px;
+    margin: 0 16px;
+}
+
+#head ul.actions li {
+    font-size: 0.75em;
 }
 
 /* list spacing */
@@ -55,6 +66,7 @@ h1,
 .markdown-body h1,
 .markdown-body h2 {
     font-weight:normal;
+    font-size: 1.5em;
 }
 
 .markdown-body {
