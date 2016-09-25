@@ -9,3 +9,8 @@ It is especially useful for customizing supported formats/markups. For more info
 =end
 
 # enter your Ruby code here ...
+sanitizer = Gollum::Sanitization.new
+#sanitizer.protocols['a']['href'].concat ['ssh', 'vnc']
+sanitizer.elements.concat ['figure', 'figcaption']
+#sanitizer.attributes['a'].push 'target'
+Precious::App.set(:wiki_options, {sanitization: sanitizer})
