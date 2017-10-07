@@ -1,5 +1,4 @@
-gollum -- A git-based Wiki
-====================================
+# gollum -- A git-based Wiki
 
 [![Gem Version](https://badge.fury.io/rb/gollum.svg)](http://badge.fury.io/rb/gollum)
 [![Build Status](https://travis-ci.org/gollum/gollum.svg?branch=master)](https://travis-ci.org/gollum/gollum)
@@ -8,6 +7,7 @@ gollum -- A git-based Wiki
 ## DESCRIPTION
 
 Gollum is a simple wiki system built on top of Git. A Gollum Wiki is simply a git repository (either bare or regular) of a specific nature:
+
 * A Gollum repository's contents are human-editable, unless the repository is bare. Pages are unique text files which may be organized into directories any way you choose. Other content can also be included, for example images, PDFs and headers/footers for your pages.
 * Gollum pages:
 	* May be written in a variety of [markups](#markups).
@@ -43,34 +43,19 @@ For a quick impression of gollum, see [this video](https://www.youtube.com/watch
 Varies depending on operating system, package manager and Ruby installation. Generally, you should first install Ruby and then Gollum.
 
 1. Ruby is best installed either via [RVM](https://rvm.io/) or a package manager of choice.
-2. Gollum is best installed via RubyGems:  
-	```
-	[sudo] gem install gollum
-	```
+2. Gollum is best installed via RubyGems: `[sudo] gem install gollum`
 
 Installation examples for individual systems can be seen [here](https://github.com/gollum/gollum/wiki/Installation).
 
 **Notes:**  
 * Whichever Ruby implementation you're using, Gollum ships with the appropriate default git adapter. So the above installation procedure is common for both MRI and JRuby.
 * If you're installing from source:
-	* Optionally uninstall any previous versions of Gollum:  
-		```
-		[sudo] gem uninstall -aIx gollum
-		```
+	* Optionally uninstall any previous versions of Gollum: `[sudo] gem uninstall -aIx gollum`
 	* Install [Bundler](http://bundler.io/).
 	* Navigate to the cloned source of Gollum.
-	* Install dependencies:  
-		```
-		[sudo] bundle install
-		```
-	* Build:  
-		```
-		rake build
-		```
-	* And install:  
-		```
-		[sudo] gem install --no-ri --no-rdoc pkg/gollum*.gem
-		```
+	* Install dependencies: `[sudo] bundle install`
+	* Build: `rake build`
+	* And install: `[sudo] gem install --no-ri --no-rdoc pkg/gollum*.gem`
 
 ### Markups
 
@@ -176,10 +161,7 @@ When `--config` option is used, certain inner parts of Gollum can be customized.
 
 1. Fork and clone Gollum.
 2. Create a thoughtfully named topic branch to contain your changes.
-3. If you haven't installed dependencies yet, navigate to your clone and execute:  
-	```
-	[sudo] bundle install
-	```
+3. If you haven't installed dependencies yet, navigate to your clone and execute: `[sudo] bundle install`
 4. Hack away.
 5. Add your own tests and make sure they're all still passing.
 6. If some of your changes deserve a mention on Gollum's home page, edit the README accordingly.
@@ -194,20 +176,14 @@ When `--config` option is used, certain inner parts of Gollum can be customized.
 
 1. Install [Bundler](http://bundler.io/).
 2. Navigate to the cloned source of Gollum.
-3. Install dependencies:  
-	```
-	[sudo] bundle install
-	```
-4. Run the tests:  
-	```
-	bundle exec rake test
-	```
+3. Install dependencies: `[sudo] bundle install`
+4. Run the tests: `bundle exec rake test`
 
 ### Working with test repositories
 
 An example of how to add a test file to the bare repository lotr.git.
 
-```
+```bash
 mkdir tmp
 cd tmp
 git clone ../lotr.git/
@@ -226,14 +202,14 @@ Gollum uses [Semantic Versioning](http://semver.org/).
 
 For z releases:
 
-```
+```bash
 rake bump
 rake release
 ```
 
 For x.y releases:
 
-```
+```bash
 # First update VERSION in lib/gollum.rb and then:
 rake gemspec
 rake release
